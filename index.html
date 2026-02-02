@@ -1,0 +1,269 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Radhika trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1359368745986527');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1359368745986527&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <style>
+
+    body
+    {
+        font-family: "Ubuntu", sans-serif;
+    }
+    /* --- animated gradient background --- */
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-bg {
+      background: linear-gradient(90deg, #fff7ed 0%, #dff7ea 30%, #fff1f2 60%, #f7f7ff 100%);
+      background-size: 200% 200%;
+      animation: bgShift 12s ease infinite;
+    }
+
+    /* --- hero entrance / floating --- */
+    @keyframes floaty {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px) rotate(-1deg); }
+      100% { transform: translateY(0); }
+    }
+    .floaty { animation: floaty 3.5s ease-in-out infinite; }
+
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; filter: blur(6px); }
+      60% { transform: scale(1.05); opacity: 1; filter: blur(0); }
+      100% { transform: scale(1); }
+    }
+    .pop-in { animation: popIn 700ms cubic-bezier(.2,.9,.3,1) both; }
+
+    /* --- CTA pulse on hover & micro-press --- */
+    .cta-pulse {
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta-pulse:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 18px 40px rgba(16,185,129,0.18); }
+    .cta-press:active { transform: translateY(1px) scale(.995); }
+
+    /* --- soft glow label --- */
+    .glow-text { text-shadow: 0 8px 24px rgba(255,59,48,0.08); }
+
+    /* --- floating sparkles --- */
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.2));
+      opacity: 0.0;
+      filter: blur(0.6px);
+      animation: sparkleAnim 3.5s linear infinite;
+    }
+    @keyframes sparkleAnim {
+      0% { transform: translateY(0) scale(.6); opacity: 0; }
+      10% { opacity: 1; }
+      60% { opacity: 0.6; transform: translateY(-60px) scale(1.1); }
+      100% { opacity: 0; transform: translateY(-120px) scale(.8); }
+    }
+
+    /* --- countdown flip-ish --- */
+    .flip {
+      perspective: 400px;
+    }
+    .flip .digit {
+      display:inline-block;
+      transform-origin: center;
+      transition: transform .35s cubic-bezier(.2,.9,.3,1);
+    }
+    .flip .digit.flip-animate { transform: rotateX(-180deg); }
+
+    /* responsive tweak to keep things compact on small screens */
+    @media (max-width:420px) {
+      .count-box { padding: 0.5rem 0.75rem; }
+      .w-max-hero { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center animated-bg font-inter">
+
+  <main class="w-full max-w-md p-5">
+    <section class="relative bg-white/90 backdrop-blur rounded-3xl shadow-2xl border border-gray-100 overflow-hidden pop-in">
+      <!-- floating sparkles container -->
+      <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
+        <!-- create several sparkles positioned across the top-right area -->
+        <div class="sparkle" style="left:12%; top:14%; animation-delay: -0.3s;"></div>
+        <div class="sparkle" style="left:28%; top:6%; animation-delay: -1.2s;"></div>
+        <div class="sparkle" style="left:76%; top:20%; animation-delay: -0.9s;"></div>
+        <div class="sparkle" style="left:62%; top:8%; animation-delay: -0.5s;"></div>
+      </div>
+
+      <!-- top label -->
+      <div class="px-6 pt-5">
+        <div class="text-xs font-extrabold tracking-widest text-red-600 uppercase text-center">
+GUJARATI TRADER OFFICIAL
+        </div>
+      </div>
+
+      <!-- hero -->
+      <div class="p-6 flex flex-col items-center text-center">
+        <div class="relative">
+          <!-- bouncing circular image -->
+          <img src="https://onebyone.site/wp-content/uploads/2026/02/yue.jpg" alt="RADHIKA TRADER"
+            class="w-40 h-40 object-cover rounded-full shadow-2xl floaty w-max-hero"
+            style="box-shadow: 0 18px 40px rgba(0,0,0,0.12);"
+          >
+          <!-- subtle neon ring -->
+          <span class="absolute inset-0 rounded-full pointer-events-none"
+                style="box-shadow: 0 0 40px rgba(34,197,94,0.08), inset 0 0 36px rgba(249,115,22,0.03);"></span>
+        </div>
+
+        <h1 class="mt-5 text-lg md:text-xl font-extrabold text-gray-800 glow-text">RECOVER YOUR LOSS IN WITH CUJRATI TRADER</h1>
+
+        <div class="mt-3 inline-flex items-center gap-3">
+          <span class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white font-black px-4 py-2 rounded-full tracking-wide transform transition-all hover:scale-105">RADHIKA TRADER OFFICIAL</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-6 w-full">
+            <a href="https://t.me/+Qa6j8tI5DHIwNzRl">
+            <button id="joinBtn"
+                class="w-full cta-pulse cta-press bg-emerald-500/95 hover:bg-emerald-600 text-white font-extrabold py-3 rounded-full shadow-lg transform transition-all"
+                aria-label="Join Now Free">
+                JOIN NOW FREE
+            </button>
+            </a>
+        </div>
+
+        <div class="mt-4 text-xs uppercase text-gray-500 font-semibold">DAILY 10-15 SURESHOTS SIGNALS</div>
+        <div class="mt-1 text-sm text-gray-600">GET 95 — 99% ACCURATE SIGNALS DAILY</div>
+
+        <div class="mt-6">
+          <div class="text-2xl font-extrabold text-red-500">Hurry Up!</div>
+        </div>
+
+        <!-- animated countdown -->
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <div class="count-box bg-gray-50 rounded-xl px-5 py-3 text-center shadow-sm">
+            <div class="text-[10px] font-semibold text-gray-400">HRS</div>
+            <div id="hrs" class="text-2xl font-extrabold flip">
+              <span class="digit">00</span>
+            </div>
+          </div>
+
+          <div class="count-box bg-gray-50 rounded-xl px-5 py-3 text-center shadow-sm">
+            <div class="text-[10px] font-semibold text-gray-400">MINS</div>
+            <div id="mins" class="text-2xl font-extrabold flip">
+              <span class="digit">00</span>
+            </div>
+          </div>
+
+          <div class="count-box bg-gray-50 rounded-xl px-5 py-3 text-center shadow-sm">
+            <div class="text-[10px] font-semibold text-gray-400">SECS</div>
+            <div id="secs" class="text-2xl font-extrabold flip">
+              <span class="digit">08</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="doneMsg" class="mt-3 text-sm text-gray-400 opacity-0 transition-opacity">Time expired — Hurry Back!</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // COUNTDOWN + flip animation per digit
+    (function(){
+      // initial seconds (screen shot shows 8 secs)
+      let totalSeconds = 8;
+      const hrsEl = document.getElementById('hrs');
+      const minsEl = document.getElementById('mins');
+      const secsEl = document.getElementById('secs');
+      const doneMsg = document.getElementById('doneMsg');
+      const joinBtn = document.getElementById('joinBtn');
+
+      function setText(el, value) {
+        // animate flip by toggling a class on the .digit element
+        const digit = el.querySelector('.digit');
+        if (!digit) {
+          el.innerHTML = '<span class="digit">' + value + '</span>';
+          return;
+        }
+        // create a quick flip: add class, update after short delay
+        digit.classList.add('flip-animate');
+        // keep a copy of old content for accessible visual continuity (not necessary here)
+        setTimeout(() => {
+          digit.textContent = value;
+          digit.classList.remove('flip-animate');
+        }, 180); // shorter than CSS transition for snappy feel
+      }
+
+      function render() {
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        setText(hrsEl, String(hrs).padStart(2,'0'));
+        setText(minsEl, String(mins).padStart(2,'0'));
+        setText(secsEl, String(secs).padStart(2,'0'));
+      }
+
+      // initial render (with small stagger so flip is visible)
+      render();
+      
+        const tick = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(tick);
+            doneMsg.style.opacity = '1';
+            joinBtn.classList.add('animate-pulse');
+
+            // Redirect after 800ms so the pulse is visible briefly
+            setTimeout(() => {
+            window.location.href = 'https://t.me/+Qa6j8tI5DHIwNzRl';
+            }, 800);
+
+            return;
+        }
+        totalSeconds--;
+        render();
+        }, 1000);
+
+      // CTA micro-interaction (click effect + redirect)
+      joinBtn.addEventListener('click', (e) => {
+        // quick press animation
+        joinBtn.classList.add('scale-95');
+        setTimeout(()=> joinBtn.classList.remove('scale-95'), 120);
+        // placeholder action
+        window.location.href = 'https://t.me/+Qa6j8tI5DHIwNzRl';
+      });
+
+      // Gentle entrance animations for sparkles (randomize delays)
+      document.querySelectorAll('.sparkle').forEach((el, i) => {
+        el.style.animationDelay = (Math.random() * -3).toFixed(2) + 's';
+        el.style.left = (8 + Math.random() * 84) + '%';
+      });
+    })();
+  </script>
+</body>
+</html>
